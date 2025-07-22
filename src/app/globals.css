@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@fontsource/playfair-display/latin.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -102,11 +103,37 @@
   --sidebar-ring: #e6b800;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', var(--font-sans), serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    transition: color 0.3s;
+  }
+  h1 {
+    font-size: 2.5rem;
+    @apply md:text-5xl;
+    color: var(--primary);
+  }
+  h2 {
+    font-size: 2rem;
+    @apply md:text-3xl;
+    color: var(--primary);
+  }
+  h3 {
+    font-size: 1.5rem;
+    @apply md:text-2xl;
+    color: var(--primary);
   }
 }

@@ -6,12 +6,11 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: "/", label: "Главная" },
-  { href: "/about", label: "О нас" },
-  { href: "/services", label: "Услуги" },
-  { href: "/gallery", label: "Галерея" },
-  { href: "/reviews", label: "Отзывы" },
-  { href: "/contact", label: "Контакты" },
+  { href: "#about", label: "О нас" },
+  { href: "#services", label: "Услуги" },
+  { href: "#partners", label: "Партнёры" },
+  { href: "#gallery", label: "Галерея" },
+  { href: "#contact", label: "Контакты" },
 ];
 
 export default function Header() {
@@ -25,11 +24,9 @@ export default function Header() {
             <NavigationMenuList>
               {navLinks.map((link) => (
                 <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink className="px-3 py-2 rounded-md hover:bg-primary/10 transition-colors font-medium">
-                      {link.label}
-                    </NavigationMenuLink>
-                  </Link>
+                  <a href={link.href} className="px-3 py-2 rounded-md hover:bg-primary/10 transition-colors font-medium">
+                    {link.label}
+                  </a>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -56,13 +53,13 @@ export default function Header() {
             <SheetContent side="left" className="p-0 w-64">
               <nav className="flex flex-col gap-2 mt-8 px-4">
                 {navLinks.map((link) => (
-                  <Link
+                  <a
                     key={link.href}
                     href={link.href}
                     className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors font-medium"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 ))}
                 <div className="mt-4">
                   <DropdownMenu>
